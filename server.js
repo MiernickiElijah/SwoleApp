@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3001
 
@@ -16,18 +17,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/index", {
 });
 
 // routes
-app.use(require("./routes/htmlroutes.js"));
+app.use(require("./routes/view.js"));
 app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
-});
-
-const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://miernickielijah:<password>@cluster0.r4ova.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
 });
