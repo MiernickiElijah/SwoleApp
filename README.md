@@ -14,7 +14,7 @@ This is a fitness and workout tracker that allows a user to log exercise data an
 [License](#License)  
 --------------
 ## Usage  
-Utilize the on screen commands to log and track workout data
+Utilize the on screen commands to log and track workout data at https://swole-application.herokuapp.com/
 --------------
 ## Screenshot  
 ![Screenshot](assets/images/screenshot.png)
